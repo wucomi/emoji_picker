@@ -1200,7 +1200,9 @@ class _EmojiPickerState extends State<EmojiPicker> {
     getRecentEmojis().then((_) {
       pages.removeAt(recommendedPagesNum);
       pages.insert(recommendedPagesNum, recentPage());
-      setState(() {});
+      if(mounted){
+        setState(() {});
+      }
     });
   }
 
