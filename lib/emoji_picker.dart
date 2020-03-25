@@ -320,7 +320,7 @@ class _EmojiPickerState extends State<EmojiPicker> {
       try {
         isAvailable =
             await platform.invokeMethod("isAvailable", {"emoji": emoji});
-      } on PlatformException catch (_) {
+      } on catch (_) {
         isAvailable = false;
       }
       return isAvailable;
